@@ -1,9 +1,10 @@
+@import "tailwindcss";
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap");
 .mainheader {
   display: flex;
   position: fixed;
@@ -153,28 +154,6 @@ body {
   max-width: calc(40ch);
   font-size: 3vw;
 }
-.nav {
-  display: flex;
-  right: 0cm;
-  position: fixed;
-  margin-right: -100vh;
-  color: rgb(124, 122, 122);
-  border: 1px solid rgb(124, 122, 122);
-  width: fit-content;
-  font-size: 16px;
-  margin-top: 20px;
-  padding: 12px;
-  border-radius: 15px;
-  
-  transition: all 0.4s ease;
-}
-.nav:hover {
-  scale: 1.1;
-  cursor: pointer;
-}
-.nav:active{
-  scale: 0.9;
-}
 @media (max-width: 800px) {
   .refrence {
     margin-left: -300vh;
@@ -190,10 +169,6 @@ body {
   }
   .img {
     margin-top: 20px;
-  }
-  .nav {
-    display: block;
-    margin-right: 30px;
   }
   .homebody {
     margin-left: 0px;

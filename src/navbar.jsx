@@ -1,6 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import pic from "./assets/ali.jpg";
 import { useState } from "react";
+function navtrg(){
+const navtrg = document.getElementById("navtrg").childNodes
+console.log(navtrg)
+}
 export default function Navbar() {
   const location = useLocation();
   const [home, setHome] = useState("home");
@@ -21,44 +25,35 @@ export default function Navbar() {
         <Link to="/" className={location.pathname === "/" ? "active" : ""}>
           <button
             className={`iconbox ${home}`}
-            onFocus={() =>
-              setHome("home") &
-              setUser("") &
-              setExperience("") 
-       
-            }
+            onFocus={() => setHome("home") & setUser("") & setExperience("")}
             // onBlur={() => setHome("")}
           >
             <i className="fas fa-house"></i> Home
           </button>
         </Link>
-        <Link to="user" className={location.pathname === "user" ? "active" : ""}>
-        <button
-          className={`iconbox ${user}`}
-          onFocus={() =>
-            setHome("") &
-            setUser("user") &
-            setExperience("") 
-          }
-          // onBlur={() => setUser("")}
+        <Link
+          to="user"
+          className={location.pathname === "user" ? "active" : ""}
         >
-          <i className="fas fa-user"></i> Profile
-        </button>
+          <button
+            className={`iconbox ${user}`}
+            onFocus={() => setHome("") & setUser("user") & setExperience("")}
+            // onBlur={() => setUser("")}
+          >
+            <i className="fas fa-user"></i> Profile
+          </button>
         </Link>
-        <Link to="experience" >
-        <button
-          className={`iconbox ${experience}`}
-          onFocus={() =>
-            setHome("") &
-            setUser("") &
-            setExperience("experience") 
-          }
-          // onBlur={() => setExperience("")}
-        >
-          <i className="fas fa-pen"></i> Experience
-        </button>
-        </Link >
-
+        <Link to="experience">
+          <button
+            className={`iconbox ${experience}`}
+            onFocus={() =>
+              setHome("") & setUser("") & setExperience("experience")
+            }
+            // onBlur={() => setExperience("")}
+          >
+            <i className="fas fa-pen"></i> Experience
+          </button>
+        </Link>
       </div>
       <div className={`${navstate ? "navconnect" : "connect"}`}>
         <div>
@@ -79,8 +74,10 @@ export default function Navbar() {
           <i className="fas fa-arrow-up-right-from-square unlink"></i>
         </a>
       </div>
-      <button id="nav" className="nav" onClick={() => setnavstate(!navstate)}>
-        <i className={navstate ? "fas fa-times" : "fas fa-bars"}></i>
+      <button id="navtrg" className=" fixed flex flex-col right-7 gap-1 top-8 " onClick={() => setnavstate(!navstate) & navtrg()}>
+        <span className="bg-red-500 rounded-full min-h-0.5 min-w-4 transition-all duration-300"></span>
+        <span className="bg-red-500 rounded-full min-h-0.5 min-w-4 transition-all duration-300"></span>
+        <span className="bg-red-500 rounded-full min-h-0.5 min-w-4 transition-all duration-300"></span>
       </button>
     </aside>
   );
