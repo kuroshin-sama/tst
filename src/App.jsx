@@ -1,15 +1,19 @@
-import Header from "./Header";
-import GlassCard from "./GlassCard";
-import BullShit from "./BullShit";
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./layout";
+import Home from "./pages/home";
+import Experience from "./pages/Experience";
+import User from "./pages/profile";
+import './animstr'
+export default function App() {
   return (
-    <div>
-      <Header />
-      <main className="container">
-        <GlassCard />
-        <BullShit />
-      </main>
-    </div>
+    <BrowserRouter basename="/my-LabRat">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="Experience" element={<Experience />} />
+          <Route path="user" element={<User />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-export default App;
